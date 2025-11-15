@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-# Esto permite que CUALQUIER sitio web acceda a tu backend (Inseguro para bancos, perfecto para esta tarea)
+# CORS permite que CUALQUIER sitio web acceda al backend
 CORS(app) 
 
 @app.route('/')
@@ -11,7 +11,7 @@ def home():
 
 @app.route('/api/saludo')
 def saludo():
-    # Aquí es donde más tarde consultarás la Base de Datos
+    # Aquí podríamos consultar la base de datos que vayamos a conectar
     datos = {
         "mensaje": "Hola desde el Backend (Python)",
         "estudiante": "Tu Nombre",
